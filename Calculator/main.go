@@ -55,6 +55,18 @@ func convertToRoman(num int) (string, error) {
 
 	// Построение римских чисел больших, чем 10
 	roman := ""
+	for num == 100 {
+		roman += "C"
+		num -= 100
+	}
+	for num >= 90 {
+		roman += "XC"
+		num -= 90
+	}
+	for num >= 50 {
+		roman += "L"
+		num -= 50
+	}
 	for num >= 10 {
 		roman += "X"
 		num -= 10
